@@ -1,0 +1,61 @@
+import turtle
+import tkinter as tk
+import time
+from tkinter import messagebox
+import pywifi
+
+def __phython__():
+    wifi = pywifi.PyWiFi()
+    card = wifi.interfaces()[0]
+    card.disconnect()
+
+    turtle.bgcolor('black')
+    turtle.color('white','red')
+    turtle.begin_fill()
+    turtle.left(45)
+    turtle.forward(200)
+    turtle.circle(100,180)
+    turtle.right(90)
+    turtle.circle(100,180)
+    turtle.forward(200)
+    turtle.end_fill()
+    turtle.penup()
+    turtle.goto(-200, 0)
+    turtle.pendown()
+    for i in range(len(f"戎昕语姐姐,网卡被关了哦")):
+        turtle.write(f"戎昕语姐姐,网卡被关了哦"[:i+1], align='left',font=('Times New Roman', 30, 'italic'))
+        turtle.delay()
+        time.sleep(0.1)
+    time.sleep(3)
+    turtle.done()
+
+    words = "love"
+    for item in words.split():
+     letterlist = []
+     for y in range(20, -20, -1):
+      list_X = []
+      letters = ''
+      for x in range(-30, 30):
+       expression = ((x*0.05)**2+(y*0.1)**2-1.5)**3-(x*0.05)**2*(y*0.1)**5
+       if expression <= 0:
+        letters += item[(x-y) % len(item)]
+       else:
+        letters += ' '
+      list_X.append(letters)
+      letterlist += list_X
+     print('\n'.join(letterlist))
+
+    root = tk.Tk()
+    root.attributes('-fullscree', True)
+    root.attributes('-alpha', 0.1)
+
+    def small_window():
+        messagebox.showinfo(" ", "戎昕语姐姐,桌面被控制了哦")
+
+    button = tk.Button(root, command=small_window,
+                       width=root.winfo_screenwidth(), height=root.winfo_screenheight())
+    button.pack()
+
+    root.mainloop()
+
+__phython__()
